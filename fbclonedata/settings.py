@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*1^5ueimv_4(w4@r)!x*e1)z%6p_e8p3fy=4+i(7q01hitzo+-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,10 +73,21 @@ WSGI_APPLICATION = 'fbclonedata.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fbcloneapi',
+        'USER': 'postgres',
+        'PASSWORD': 'psql',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
